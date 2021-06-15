@@ -1,0 +1,34 @@
+print('=' * 40)
+print('''CÉDULAS DO BANCO:
+R$ 100,00
+R$ 50,00
+R$ 20,00
+R$ 10,00
+R$ 5,00
+R$ 1,00''')
+print('=' * 40)
+valor = int(input('Qual o valor que você quer sacar?'))
+total = valor
+céd = 100
+totcéd = 0
+while True:
+    if total >= céd:
+        total = total - céd
+        totcéd = totcéd + 1
+    else:
+        if totcéd > 0:
+            print('Precisou de {} cédula(s) de {}.'.format(totcéd,céd))
+        if céd == 100:
+            céd = 50
+        elif céd == 50:
+            céd = 20
+        elif céd == 20:
+            céd = 10
+        elif céd == 10:
+            céd = 5
+        elif céd == 5:
+            céd = 1
+        totcéd = 0
+        if total == 0:
+            break
+print('VOLTE SEMPRE AO BANCO, MEU CAMARADA!')
